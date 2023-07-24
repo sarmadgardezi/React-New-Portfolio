@@ -29,7 +29,6 @@ const jsonLdProps: SocialProfileJsonLdProps = {
 
 type HomePageProps = {
   posts: EnrichedBlogPostMatter[];
-  projects: EnrichedProjectMatter[];
 };
 
 const HomePage: NextPage<HomePageProps> = props => {
@@ -56,7 +55,7 @@ const HomePage: NextPage<HomePageProps> = props => {
       <HeroSection />
       <IntroductionSection />
       <LatestPostsSection posts={props.posts} />
-      <LatestProjectsSection projects={props.projects} />
+     
       <ContactCard />
     </>
   );

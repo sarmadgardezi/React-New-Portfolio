@@ -1,15 +1,13 @@
-import React from 'react';
 
 
-const Project: NextPage<HomePageProps> = props => {
+const Projects: NextPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div>
-      <h1>Projects</h1>
-      
-    </div>
+    <>
+     <h1>Hellow</h1>
+    </>
   );
 };
 
-
-export default Project;
+export default Projects;
