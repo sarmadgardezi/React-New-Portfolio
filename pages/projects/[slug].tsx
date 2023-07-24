@@ -8,7 +8,8 @@ import { Flex
 Heading,
 Text,
 Container,
-Button
+Button,
+Image,
 
 } from '@chakra-ui/react';
 
