@@ -6,7 +6,6 @@ import { getAllProjects } from '@lib/mdx/projects';
 import { HeroSection } from '@sections/HomePage/Hero';
 import { IntroductionSection } from '@sections/HomePage/Introduction';
 import { LatestPostsSection } from '@sections/HomePage/LatestPosts';
-import { LatestProjectsSection } from '@sections/HomePage/LatestProjects';
 import { ContactCard } from '@components/Card';
 import { byNewestDate } from '@utils/sort';
 import { getBaseUrl } from '@utils/getBaseUrl';
@@ -14,7 +13,7 @@ import { socialProfiles } from '@config/profiles.config';
 import { LogoJsonLd } from 'next-seo';
 
 import type { EnrichedBlogPostMatter } from './blog/[slug]';
-import type { EnrichedProjectMatter } from './projects/[slug]';
+
 
 const baseUrl = getBaseUrl();
 
