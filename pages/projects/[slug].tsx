@@ -8,6 +8,7 @@ import { Flex
 Heading,
 Text,
 Container,
+Button
 
 } from '@chakra-ui/react';
 
@@ -74,7 +75,7 @@ const Project: FC<ProjectProps> = ({ code, frontmatter }) => {
           </Button>
         </Stack>
         <Flex w={'full'}>
-        <img src={frontmatter.images?.[0]?.src} width={200} alt="Project Image" /> {/* Render the src property from images */}
+        <Image src={frontmatter.images?.[0]?.src} width={200} alt="Project Image" /> {/* Render the src property from images */}
         </Flex>
         <Flex w={'full'}>
         <MDXBody />
