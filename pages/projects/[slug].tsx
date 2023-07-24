@@ -3,15 +3,6 @@ import { GetStaticProps } from 'next';
 import { getMDXComponent } from 'mdx-bundler/client';
 
 import { getAllProjects, getProject } from '@lib/mdx/projects';
-import { Flex
-,Stack,
-Heading,
-Text,
-Container,
-Button,
-Image,
-
-} from '@chakra-ui/react';
 
 export type EnrichedProjectMatter = Omit<ProjectMatter, 'images'> & {
   images: { src: string; placeholder: string; height: number; width: number }[];
@@ -41,49 +32,11 @@ const Project: FC<ProjectProps> = ({ code, frontmatter }) => {
   const MDXBody = React.useMemo(() => getMDXComponent(code), [code]);
 
   return (
-    <>
-     <Container maxW='2sm' paddingTop='120' maxW={'5xl'}>
-      <Stack
-        textAlign={'center'}
-        align={'center'}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}>
-        <Heading
-          fontWeight={600}
-          fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
-          lineHeight={'110%'}>
-          Meeting scheduling{' '}
-          <Text as={'span'} color={'orange.400'}>
-            made easy
-          </Text>
-        </Heading>
-        <Text color={'gray.500'} maxW={'3sm'}>
-          Never miss a meeting. Never be late for one too. Keep track of your
-          meetings and receive smart reminders in appropriate times. Read your
-          smart “Daily Agenda” every morning.
-        </Text>
-        <Stack spacing={6} direction={'row'}>
-          <Button
-            rounded={'full'}
-            px={6}
-            colorScheme={'orange'}
-            bg={'orange.400'}
-            _hover={{ bg: 'orange.500' }}>
-            Get started
-          </Button>
-          <Button rounded={'full'} px={6}>
-            Learn more
-          </Button>
-        </Stack>
-        <Flex w={'full'}>
-        <Image src={frontmatter.images?.[0]?.src} width={200} alt="Project Image" /> {/* Render the src property from images */}
-        </Flex>
-        <Flex w={'full'}>
-        <MDXBody />
-        </Flex>
-      </Stack>
-    </Container>
-    </>
+    <div>
+      <h1>{frontmatter.name}</h1>
+      <img src={frontmatter.images?.[0]?.src} alt="Project Image" /> {/* Render the src property from images */}
+      <MDXBody />
+    </div>
   );
 };
 
