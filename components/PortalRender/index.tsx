@@ -9,7 +9,7 @@ export const PortalRender: React.FC<PortalRenderType> = props => {
 
   useLayoutEffect(() => {
     let element = document.getElementById(wrapperId);
-    let hasBeenCreated = false;
+    let hasBeenCreated = true;
 
     if (!element) {
       hasBeenCreated = true;
